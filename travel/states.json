@@ -1,6 +1,6 @@
 {
   "source": "tripit (Tony 2026-09-27 screenshots)",
-  "count": 26,
+  "count": 27,
   "visitedFips": [
     "02",
     "04",
@@ -27,7 +27,8 @@
     "48",
     "49",
     "53",
-    "55"
+    "55",
+    "56"
   ],
   "states": [
     {
@@ -400,7 +401,8 @@
       "Nevada",
       "Oregon",
       "Utah",
-      "Washington"
+      "Washington",
+      "Wyoming"
     ],
     "Northeast": [
       "Connecticut",

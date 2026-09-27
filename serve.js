@@ -80,7 +80,7 @@ const server = http.createServer((req, res) => {
       const ext = path.extname(pathToFile).toLowerCase();
       res.writeHead(statusCode, {
         'Content-Type': MIME[ext] || 'application/octet-stream',
-        'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=3600',
+        'Cache-Control': (ext === '.html' || url.startsWith('/travel/')) ? 'no-cache' : 'public, max-age=3600',
       });
       if (req.method === 'HEAD') res.end();
       else res.end(data);

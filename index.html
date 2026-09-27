@@ -24,7 +24,7 @@
       </div>
 
       <nav class="links" aria-label="Featured links">
-        <a class="btn" href="/travel" data-open-travel>Travel Map</a>
+        <a class="btn" href="/travel/">Travel Map</a>
         <a class="btn" href="https://tonyswartzlaw.com" target="_blank" rel="noopener noreferrer">Law Office of Tony Swartz</a>
         <a class="btn" href="https://www.youtube.com/c/TonySwartz1" target="_blank" rel="noopener noreferrer">YouTube</a>
         <a class="btn" href="https://www.instagram.com/tony.swartz/" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -60,11 +60,13 @@
     <div class="travel-panel">
       <div class="travel-header">
         <h2 id="travel-title">Travel Map</h2>
-        <button type="button" class="travel-close" aria-label="Close travel map">Close</button>
-      </div>
-      <div class="travel-tabs" role="tablist" aria-label="Travel map views">
-        <button type="button" class="travel-tab is-active" role="tab" data-travel-tab="world" aria-selected="true" aria-label="Countries">🌎</button>
-        <button type="button" class="travel-tab" role="tab" data-travel-tab="states" aria-selected="false" aria-label="US States">🇺🇸</button>
+        <div class="travel-header-actions">
+          <div class="travel-tabs" role="tablist" aria-label="Travel map views">
+            <button type="button" class="travel-tab is-active" role="tab" data-travel-tab="world" aria-selected="true" aria-label="Countries">🌍</button>
+            <button type="button" class="travel-tab" role="tab" data-travel-tab="states" aria-selected="false" aria-label="US States">🇺🇸</button>
+          </div>
+          <button type="button" class="travel-close" aria-label="Close travel map">Close</button>
+        </div>
       </div>
       <div class="travel-view" data-travel-view="world">
         <p class="travel-intro">Loading travel stats…</p>
