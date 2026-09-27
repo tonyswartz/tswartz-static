@@ -214,10 +214,14 @@
   height: 100%;
 }
 
-.globe-wrap .region,
-.us-map-wrap .region {
+.globe-wrap .region {
   stroke: rgba(0, 0, 0, 0.18);
   stroke-width: 0.4px;
+}
+
+.us-map-wrap .region {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 0.5px;
 }
 
 .globe-wrap .region.visited,
@@ -225,9 +229,12 @@
   fill: #111;
 }
 
-.globe-wrap .region.unvisited,
-.us-map-wrap .region.unvisited {
+.globe-wrap .region.unvisited {
   fill: #fff8dc;
+}
+
+.us-map-wrap .region.unvisited {
+  fill: #ffe4e4;
 }
 
 .globe-wrap .sphere {
@@ -240,7 +247,7 @@
   width: 100%;
   aspect-ratio: 1.6 / 1;
   max-height: 420px;
-  background: radial-gradient(circle at 50% 45%, #fff7c2 0%, #ffce56 55%, #f3b942 100%);
+  background: radial-gradient(circle at 50% 45%, #f08080 0%, #d64545 45%, #9b2c2c 100%);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);

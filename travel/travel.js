@@ -224,7 +224,9 @@ async function renderUsMap(container, visited) {
 
   const width = container.clientWidth || 640;
   const height = Math.round(width * 0.62);
-  const projection = geoAlbersUsa().fitSize([width, height], topojson.feature(us, us.objects.nation));
+  const pad = 14;
+  const nation = topojson.feature(us, us.objects.nation);
+  const projection = geoAlbersUsa().fitExtent([[pad, pad], [width - pad, height - pad]], nation);
   const path = geoPath(projection);
   const states = topojson.feature(us, us.objects.states).features;
 
@@ -246,7 +248,7 @@ async function renderUsMap(container, visited) {
   const observer = new ResizeObserver(() => {
     const w = container.clientWidth || width;
     const h = Math.round(w * 0.62);
-    projection.fitSize([w, h], topojson.feature(us, us.objects.nation));
+    projection.fitExtent([[pad, pad], [w - pad, h - pad]], nation);
     svg.attr('viewBox', `0 0 ${w} ${h}`);
     svg.selectAll('path.region').attr('d', path);
   });
@@ -298,14 +300,13 @@ function renderContinents(container, grouped, total, unit) {
         <div class="travel-stat">
           <span class="travel-stat-number">${total}</span>
           <span class="travel-stat-label">${label} visited</span>
-          <span class="travel-stat-note">${escapeHtml(remaining)} is the only one left — grouped by region below.</span>
+          <span class="travel-stat-note">${escapeHtml(remaining)} is the only one left.</span>
         </div>`;
     } else if (total) {
       intro.innerHTML = `
         <div class="travel-stat">
           <span class="travel-stat-number">${total}</span>
           <span class="travel-stat-label">${label} visited</span>
-          <span class="travel-stat-note">Grouped by ${unit === 'states' ? 'region' : 'continent'} below.</span>
         </div>`;
     } else {
       intro.textContent = `No ${label} marked yet — send me your list and I will fill this in.`;
