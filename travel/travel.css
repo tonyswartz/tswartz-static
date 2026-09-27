@@ -273,9 +273,9 @@
 
 .gallery-track {
   display: flex;
-  gap: 2px;
+  gap: 0;
   width: max-content;
-  padding: 2px;
+  padding: 0;
   animation: gallery-scroll 120s linear infinite;
 }
 
@@ -286,9 +286,9 @@
 .gallery-card {
   flex: 0 0 180px;
   background: #fff;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .gallery-card img {
@@ -300,10 +300,10 @@
 
 .gallery-card span {
   display: block;
-  padding: 3px 6px 5px;
+  padding: 2px 4px 3px;
   font-size: 0.8125rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 @media (max-width: 640px) {
