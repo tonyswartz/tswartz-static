@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Travel Map — Tony Swartz</title>
-  <meta name="description" content="Countries Tony Swartz has visited">
+  <title>US States — Tony Swartz</title>
+  <meta name="description" content="US states Tony Swartz has visited">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/travel/travel.css">
 </head>
-<body class="travel-page">
+<body class="travel-page states-page">
   <main class="page blog-page">
     <div class="travel-panel">
       <div class="travel-header">
@@ -19,16 +19,13 @@
         <h2>Travel Map</h2>
       </div>
       <div class="travel-tabs" role="tablist" aria-label="Travel map views">
-        <button type="button" class="travel-tab is-active" role="tab" data-travel-tab="world" aria-selected="true">Countries</button>
-        <button type="button" class="travel-tab" role="tab" data-travel-tab="states" aria-selected="false">US States</button>
+        <a class="travel-tab" role="tab" href="/travel" data-travel-tab="world">Countries</a>
+        <button type="button" class="travel-tab is-active" role="tab" data-travel-tab="states" aria-selected="true">US States</button>
       </div>
-      <div class="travel-view" data-travel-view="world">
-        <p class="travel-intro">Loading travel stats…</p>
-        <div class="globe-wrap" data-globe aria-hidden="true"></div>
-        <div class="gallery-track-wrap" data-gallery aria-label="Country photos"></div>
-        <div class="continent-grid" data-continents></div>
+      <div class="travel-view" data-travel-view="world" hidden>
+        <p class="travel-intro">Switch to Countries for the world map.</p>
       </div>
-      <div class="travel-view" data-travel-view="states" hidden>
+      <div class="travel-view" data-travel-view="states">
         <p class="travel-intro">Loading state stats…</p>
         <div class="us-map-wrap" data-us-map aria-hidden="true"></div>
         <div class="gallery-track-wrap" data-states-gallery aria-label="State photos"></div>

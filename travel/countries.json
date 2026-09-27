@@ -1,24 +1,22 @@
 {
   "source": "matadornetwork.com/travel-map/d36b399390aba663c0e6878d8c8127b1-1682094137",
-  "count": 45,
+  "count": 40,
   "visitedIsoNums": [
     "010",
     "028",
     "032",
     "036",
-    "076",
+    "044",
     "084",
     "124",
     "152",
     "156",
     "188",
-    "191",
     "192",
     "208",
     "250",
     "276",
     "300",
-    "304",
     "320",
     "336",
     "344",
@@ -27,41 +25,37 @@
     "380",
     "392",
     "404",
-    "410",
     "484",
-    "504",
     "554",
     "578",
     "604",
+    "620",
     "630",
     "634",
     "702",
-    "704",
-    "710",
     "724",
     "752",
     "756",
     "764",
     "792",
-    "818",
     "826",
     "840",
     "858"
   ],
   "countries": [
     {
-      "name": "Antigua and Barbuda",
-      "iso3": "ATG",
-      "isoNum": "028",
-      "continent": "North America",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/antigua-and-barbuda-360x270.jpg"
-    },
-    {
       "name": "Antarctica",
       "iso3": "ATA",
       "isoNum": "010",
       "continent": "Antarctica",
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/antarctica-360x270.jpg"
+    },
+    {
+      "name": "Antigua and Barbuda",
+      "iso3": "ATG",
+      "isoNum": "028",
+      "continent": "North America",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/antigua-and-barbuda-360x270.jpg"
     },
     {
       "name": "Argentina",
@@ -78,6 +72,13 @@
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/australia-1-360x270.jpg"
     },
     {
+      "name": "Bahamas",
+      "iso3": "BHS",
+      "isoNum": "044",
+      "continent": "North America",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/bahamas-360x270.jpg"
+    },
+    {
       "name": "Belize",
       "iso3": "BLZ",
       "isoNum": "084",
@@ -90,13 +91,6 @@
       "isoNum": "124",
       "continent": "North America",
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/canada-1-360x270.jpg"
-    },
-    {
-      "name": "Switzerland",
-      "iso3": "CHE",
-      "isoNum": "756",
-      "continent": "Europe",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/switzerland-1-360x270.jpg"
     },
     {
       "name": "Chile",
@@ -127,13 +121,6 @@
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/cuba-360x270.jpg"
     },
     {
-      "name": "Germany",
-      "iso3": "DEU",
-      "isoNum": "276",
-      "continent": "Europe",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/germany-360x270.jpg"
-    },
-    {
       "name": "Denmark",
       "iso3": "DNK",
       "isoNum": "208",
@@ -148,18 +135,18 @@
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/england-360x270.jpg"
     },
     {
-      "name": "Spain",
-      "iso3": "ESP",
-      "isoNum": "724",
-      "continent": "Europe",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/spain-360x270.jpg"
-    },
-    {
       "name": "France",
       "iso3": "FRA",
       "isoNum": "250",
       "continent": "Europe",
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/france-360x270.jpg"
+    },
+    {
+      "name": "Germany",
+      "iso3": "DEU",
+      "isoNum": "276",
+      "continent": "Europe",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/germany-360x270.jpg"
     },
     {
       "name": "Greece",
@@ -183,18 +170,18 @@
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/hong-kong-1-360x270.jpg"
     },
     {
-      "name": "Ireland",
-      "iso3": "IRL",
-      "isoNum": "372",
-      "continent": "Europe",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/ireland-1-360x270.jpg"
-    },
-    {
       "name": "Iceland",
       "iso3": "ISL",
       "isoNum": "352",
       "continent": "Europe",
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/iceland-360x270.jpg"
+    },
+    {
+      "name": "Ireland",
+      "iso3": "IRL",
+      "isoNum": "372",
+      "continent": "Europe",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/ireland-1-360x270.jpg"
     },
     {
       "name": "Italy",
@@ -225,13 +212,6 @@
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/mexico-360x270.jpg"
     },
     {
-      "name": "Norway",
-      "iso3": "NOR",
-      "isoNum": "578",
-      "continent": "Europe",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/norway-360x270.jpg"
-    },
-    {
       "name": "New Zealand",
       "iso3": "NZL",
       "isoNum": "554",
@@ -239,11 +219,25 @@
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/new-zealand-360x270.jpg"
     },
     {
+      "name": "Norway",
+      "iso3": "NOR",
+      "isoNum": "578",
+      "continent": "Europe",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/norway-360x270.jpg"
+    },
+    {
       "name": "Peru",
       "iso3": "PER",
       "isoNum": "604",
       "continent": "South America",
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/peru-360x270.jpg"
+    },
+    {
+      "name": "Portugal",
+      "iso3": "PRT",
+      "isoNum": "620",
+      "continent": "Europe",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/portugal-1-360x270.jpg"
     },
     {
       "name": "Puerto Rico",
@@ -267,6 +261,20 @@
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2018/09/scotland-360x270.jpg"
     },
     {
+      "name": "Singapore",
+      "iso3": "SGP",
+      "isoNum": "702",
+      "continent": "Asia",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/singapore-360x270.jpg"
+    },
+    {
+      "name": "Spain",
+      "iso3": "ESP",
+      "isoNum": "724",
+      "continent": "Europe",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/spain-360x270.jpg"
+    },
+    {
       "name": "Sweden",
       "iso3": "SWE",
       "isoNum": "752",
@@ -274,11 +282,11 @@
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/sweden-360x270.jpg"
     },
     {
-      "name": "Singapore",
-      "iso3": "SGP",
-      "isoNum": "702",
-      "continent": "Asia",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/singapore-360x270.jpg"
+      "name": "Switzerland",
+      "iso3": "CHE",
+      "isoNum": "756",
+      "continent": "Europe",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/switzerland-1-360x270.jpg"
     },
     {
       "name": "Thailand",
@@ -314,86 +322,25 @@
       "isoNum": "336",
       "continent": "Europe",
       "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/vatican-city-360x270.jpg"
-    },
-    {
-      "name": "Brazil",
-      "iso3": "BRA",
-      "isoNum": "076",
-      "continent": "South America",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/brazil-360x270.jpg"
-    },
-    {
-      "name": "Egypt",
-      "iso3": "EGY",
-      "isoNum": "818",
-      "continent": "Africa",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2024/05/pyramids-of-giza-360x270.jpg"
-    },
-    {
-      "name": "Greenland",
-      "iso3": "GRL",
-      "isoNum": "304",
-      "continent": "North America",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/greenland-360x270.jpg"
-    },
-    {
-      "name": "Croatia",
-      "iso3": "HRV",
-      "isoNum": "191",
-      "continent": "Europe",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/croatia-360x270.jpg"
-    },
-    {
-      "name": "South Korea",
-      "iso3": "KOR",
-      "isoNum": "410",
-      "continent": "Asia",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/south-korea-360x270.jpg"
-    },
-    {
-      "name": "Morocco",
-      "iso3": "MAR",
-      "isoNum": "504",
-      "continent": "Africa",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/morocco-1-360x270.jpg"
-    },
-    {
-      "name": "Vietnam",
-      "iso3": "VNM",
-      "isoNum": "704",
-      "continent": "Asia",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/vietnam-360x270.jpg"
-    },
-    {
-      "name": "South Africa",
-      "iso3": "ZAF",
-      "isoNum": "710",
-      "continent": "Africa",
-      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/south-africa-360x270.jpg"
     }
   ],
   "byContinent": {
-    "North America": [
-      "Antigua and Barbuda",
-      "Belize",
-      "Canada",
-      "Costa Rica",
-      "Cuba",
-      "Greenland",
-      "Guatemala",
-      "Mexico",
-      "Puerto Rico",
-      "United States"
+    "Africa": [
+      "Kenya"
     ],
-    "South America": [
-      "Argentina",
-      "Brazil",
-      "Chile",
-      "Peru",
-      "Uruguay"
+    "Antarctica": [
+      "Antarctica"
+    ],
+    "Asia": [
+      "China",
+      "Hong Kong",
+      "Japan",
+      "Qatar",
+      "Singapore",
+      "Thailand",
+      "T\u00fcrkiye"
     ],
     "Europe": [
-      "Croatia",
       "Denmark",
       "France",
       "Germany",
@@ -402,35 +349,34 @@
       "Ireland",
       "Italy",
       "Norway",
+      "Portugal",
       "Spain",
       "Sweden",
       "Switzerland",
       "United Kingdom (England & Scotland)",
       "Vatican City"
     ],
-    "Africa": [
-      "Egypt",
-      "Kenya",
-      "Morocco",
-      "South Africa"
-    ],
-    "Asia": [
-      "China",
-      "Hong Kong",
-      "Japan",
-      "Qatar",
-      "Singapore",
-      "South Korea",
-      "Thailand",
-      "T\u00fcrkiye",
-      "Vietnam"
+    "North America": [
+      "Antigua and Barbuda",
+      "Bahamas",
+      "Belize",
+      "Canada",
+      "Costa Rica",
+      "Cuba",
+      "Guatemala",
+      "Mexico",
+      "Puerto Rico",
+      "United States"
     ],
     "Oceania": [
       "Australia",
       "New Zealand"
     ],
-    "Antarctica": [
-      "Antarctica"
+    "South America": [
+      "Argentina",
+      "Chile",
+      "Peru",
+      "Uruguay"
     ]
   }
 }

@@ -1,0 +1,475 @@
+{
+  "source": "tripit (Tony 2026-09-27)",
+  "count": 49,
+  "visitedFips": [
+    "01",
+    "02",
+    "04",
+    "05",
+    "06",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "53",
+    "54",
+    "55"
+  ],
+  "states": [
+    {
+      "name": "Alabama",
+      "abbr": "AL",
+      "fips": "01",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/alabama-360x270.jpg"
+    },
+    {
+      "name": "Alaska",
+      "abbr": "AK",
+      "fips": "02",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/alaska-360x270.jpg"
+    },
+    {
+      "name": "Arizona",
+      "abbr": "AZ",
+      "fips": "04",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/arizona-360x270.jpg"
+    },
+    {
+      "name": "Arkansas",
+      "abbr": "AR",
+      "fips": "05",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/arkansas-360x270.jpg"
+    },
+    {
+      "name": "California",
+      "abbr": "CA",
+      "fips": "06",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/california-360x270.jpg"
+    },
+    {
+      "name": "Colorado",
+      "abbr": "CO",
+      "fips": "08",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/colorado-360x270.jpg"
+    },
+    {
+      "name": "Connecticut",
+      "abbr": "CT",
+      "fips": "09",
+      "region": "Northeast",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/connecticut-360x270.jpg"
+    },
+    {
+      "name": "Delaware",
+      "abbr": "DE",
+      "fips": "10",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/delaware-360x270.jpg"
+    },
+    {
+      "name": "District of Columbia",
+      "abbr": "DC",
+      "fips": "11",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/washington-dc-360x270.jpg"
+    },
+    {
+      "name": "Florida",
+      "abbr": "FL",
+      "fips": "12",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/florida-360x270.jpg"
+    },
+    {
+      "name": "Georgia",
+      "abbr": "GA",
+      "fips": "13",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/georgia-360x270.jpg"
+    },
+    {
+      "name": "Hawaii",
+      "abbr": "HI",
+      "fips": "15",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/hawaii-360x270.jpg"
+    },
+    {
+      "name": "Idaho",
+      "abbr": "ID",
+      "fips": "16",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/idaho-360x270.jpg"
+    },
+    {
+      "name": "Illinois",
+      "abbr": "IL",
+      "fips": "17",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/illinois-360x270.jpg"
+    },
+    {
+      "name": "Indiana",
+      "abbr": "IN",
+      "fips": "18",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/indiana-360x270.jpg"
+    },
+    {
+      "name": "Iowa",
+      "abbr": "IA",
+      "fips": "19",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/iowa-360x270.jpg"
+    },
+    {
+      "name": "Kansas",
+      "abbr": "KS",
+      "fips": "20",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/kansas-360x270.jpg"
+    },
+    {
+      "name": "Kentucky",
+      "abbr": "KY",
+      "fips": "21",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/kentucky-360x270.jpg"
+    },
+    {
+      "name": "Louisiana",
+      "abbr": "LA",
+      "fips": "22",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/louisiana-360x270.jpg"
+    },
+    {
+      "name": "Maine",
+      "abbr": "ME",
+      "fips": "23",
+      "region": "Northeast",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/maine-360x270.jpg"
+    },
+    {
+      "name": "Maryland",
+      "abbr": "MD",
+      "fips": "24",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/maryland-360x270.jpg"
+    },
+    {
+      "name": "Massachusetts",
+      "abbr": "MA",
+      "fips": "25",
+      "region": "Northeast",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/massachusetts-360x270.jpg"
+    },
+    {
+      "name": "Michigan",
+      "abbr": "MI",
+      "fips": "26",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/michigan-360x270.jpg"
+    },
+    {
+      "name": "Minnesota",
+      "abbr": "MN",
+      "fips": "27",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/minnesota-360x270.jpg"
+    },
+    {
+      "name": "Mississippi",
+      "abbr": "MS",
+      "fips": "28",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/mississippi-360x270.jpg"
+    },
+    {
+      "name": "Missouri",
+      "abbr": "MO",
+      "fips": "29",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/missouri-360x270.jpg"
+    },
+    {
+      "name": "Montana",
+      "abbr": "MT",
+      "fips": "30",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/montana-360x270.jpg"
+    },
+    {
+      "name": "Nebraska",
+      "abbr": "NE",
+      "fips": "31",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/nebraska-360x270.jpg"
+    },
+    {
+      "name": "Nevada",
+      "abbr": "NV",
+      "fips": "32",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/nevada-360x270.jpg"
+    },
+    {
+      "name": "New Hampshire",
+      "abbr": "NH",
+      "fips": "33",
+      "region": "Northeast",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/new-hampshire-360x270.jpg"
+    },
+    {
+      "name": "New Jersey",
+      "abbr": "NJ",
+      "fips": "34",
+      "region": "Northeast",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/new-jersey-360x270.jpg"
+    },
+    {
+      "name": "New Mexico",
+      "abbr": "NM",
+      "fips": "35",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/new-mexico-360x270.jpg"
+    },
+    {
+      "name": "New York",
+      "abbr": "NY",
+      "fips": "36",
+      "region": "Northeast",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/new-york-360x270.jpg"
+    },
+    {
+      "name": "North Carolina",
+      "abbr": "NC",
+      "fips": "37",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/north-carolina-360x270.jpg"
+    },
+    {
+      "name": "North Dakota",
+      "abbr": "ND",
+      "fips": "38",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/north-dakota-360x270.jpg"
+    },
+    {
+      "name": "Ohio",
+      "abbr": "OH",
+      "fips": "39",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/ohio-360x270.jpg"
+    },
+    {
+      "name": "Oklahoma",
+      "abbr": "OK",
+      "fips": "40",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/oklahoma-360x270.jpg"
+    },
+    {
+      "name": "Oregon",
+      "abbr": "OR",
+      "fips": "41",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/oregon-360x270.jpg"
+    },
+    {
+      "name": "Pennsylvania",
+      "abbr": "PA",
+      "fips": "42",
+      "region": "Northeast",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/pennsylvania-360x270.jpg"
+    },
+    {
+      "name": "Rhode Island",
+      "abbr": "RI",
+      "fips": "44",
+      "region": "Northeast",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/rhode-island-360x270.jpg"
+    },
+    {
+      "name": "South Carolina",
+      "abbr": "SC",
+      "fips": "45",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/south-carolina-360x270.jpg"
+    },
+    {
+      "name": "South Dakota",
+      "abbr": "SD",
+      "fips": "46",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/south-dakota-360x270.jpg"
+    },
+    {
+      "name": "Tennessee",
+      "abbr": "TN",
+      "fips": "47",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/tennessee-360x270.jpg"
+    },
+    {
+      "name": "Texas",
+      "abbr": "TX",
+      "fips": "48",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/texas-360x270.jpg"
+    },
+    {
+      "name": "Utah",
+      "abbr": "UT",
+      "fips": "49",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/utah-360x270.jpg"
+    },
+    {
+      "name": "Vermont",
+      "abbr": "VT",
+      "fips": "50",
+      "region": "Northeast",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/vermont-360x270.jpg"
+    },
+    {
+      "name": "Virginia",
+      "abbr": "VA",
+      "fips": "51",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/virginia-360x270.jpg"
+    },
+    {
+      "name": "Washington",
+      "abbr": "WA",
+      "fips": "53",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/washington-360x270.jpg"
+    },
+    {
+      "name": "West Virginia",
+      "abbr": "WV",
+      "fips": "54",
+      "region": "South",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/west-virginia-360x270.jpg"
+    },
+    {
+      "name": "Wisconsin",
+      "abbr": "WI",
+      "fips": "55",
+      "region": "Midwest",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/wisconsin-360x270.jpg"
+    },
+    {
+      "name": "Wyoming",
+      "abbr": "WY",
+      "fips": "56",
+      "region": "West",
+      "thumb": "https://cdn1.matadornetwork.com/blogs/1/2011/05/wyoming-360x270.jpg"
+    }
+  ],
+  "byRegion": {
+    "South": [
+      "Alabama",
+      "Arkansas",
+      "Delaware",
+      "Florida",
+      "Georgia",
+      "Kentucky",
+      "Louisiana",
+      "Maryland",
+      "Mississippi",
+      "North Carolina",
+      "Oklahoma",
+      "South Carolina",
+      "Tennessee",
+      "Texas",
+      "Virginia",
+      "West Virginia"
+    ],
+    "West": [
+      "Alaska",
+      "Arizona",
+      "California",
+      "Colorado",
+      "Hawaii",
+      "Idaho",
+      "Montana",
+      "Nevada",
+      "New Mexico",
+      "Oregon",
+      "Utah",
+      "Washington"
+    ],
+    "Northeast": [
+      "Connecticut",
+      "Maine",
+      "Massachusetts",
+      "New Hampshire",
+      "New Jersey",
+      "New York",
+      "Pennsylvania",
+      "Rhode Island",
+      "Vermont"
+    ],
+    "Midwest": [
+      "Illinois",
+      "Indiana",
+      "Iowa",
+      "Kansas",
+      "Michigan",
+      "Minnesota",
+      "Missouri",
+      "Nebraska",
+      "North Dakota",
+      "Ohio",
+      "South Dakota",
+      "Wisconsin"
+    ]
+  },
+  "remaining": "Wyoming"
+}

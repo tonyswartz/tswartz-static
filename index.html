@@ -62,10 +62,22 @@
         <h2 id="travel-title">Travel Map</h2>
         <button type="button" class="travel-close" aria-label="Close travel map">Close</button>
       </div>
-      <p class="travel-intro">Loading travel stats…</p>
-      <div class="globe-wrap" data-globe aria-hidden="true"></div>
-      <div class="gallery-track-wrap" data-gallery aria-label="Country photos"></div>
-      <div class="continent-grid" data-continents></div>
+      <div class="travel-tabs" role="tablist" aria-label="Travel map views">
+        <button type="button" class="travel-tab is-active" role="tab" data-travel-tab="world" aria-selected="true">Countries</button>
+        <button type="button" class="travel-tab" role="tab" data-travel-tab="states" aria-selected="false">US States</button>
+      </div>
+      <div class="travel-view" data-travel-view="world">
+        <p class="travel-intro">Loading travel stats…</p>
+        <div class="globe-wrap" data-globe aria-hidden="true"></div>
+        <div class="gallery-track-wrap" data-gallery aria-label="Country photos"></div>
+        <div class="continent-grid" data-continents></div>
+      </div>
+      <div class="travel-view" data-travel-view="states" hidden>
+        <p class="travel-intro">Loading state stats…</p>
+        <div class="us-map-wrap" data-us-map aria-hidden="true"></div>
+        <div class="gallery-track-wrap" data-states-gallery aria-label="State photos"></div>
+        <div class="continent-grid" data-states-regions></div>
+      </div>
     </div>
   </div>
 
