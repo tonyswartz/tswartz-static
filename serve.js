@@ -22,7 +22,6 @@ const MIME = {
 
 // WordPress slug redirects (Page Links To plugin targets).
 const REDIRECTS = {
-  '/rotary': 'https://docs.google.com/presentation/d/1mToK1fVEqzq8B39htd6_kDJBRFzfrAHKnflFd974QC8/edit?usp=sharing',
   '/music-fest': 'https://ellensburgmusicfestival.com/',
   '/guidecast': 'https://guidecastapp.com',
   '/instagram': 'https://instagram.com/tony.swartz',
