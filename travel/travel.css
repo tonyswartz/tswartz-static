@@ -92,8 +92,10 @@
   color: inherit;
   font: inherit;
   font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1;
   border-radius: 9999px;
-  padding: 0.5em 1em;
+  padding: 0.55em 0.75em;
   cursor: pointer;
   text-decoration: none;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.08);
