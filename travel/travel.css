@@ -374,10 +374,13 @@
 .continent-block ul {
   margin: 0;
   padding-left: 1.1rem;
+  columns: 2;
+  column-gap: 1.25rem;
 }
 
 .continent-block li {
-  margin: 0.25em 0;
+  margin: 0.2em 0;
+  break-inside: avoid;
 }
 
 @keyframes gallery-scroll {
