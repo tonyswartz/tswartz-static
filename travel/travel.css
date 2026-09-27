@@ -273,7 +273,7 @@
 
 .gallery-track {
   display: flex;
-  gap: 0;
+  gap: 4px;
   width: max-content;
   padding: 0;
   animation: gallery-scroll 120s linear infinite;
@@ -284,11 +284,12 @@
 }
 
 .gallery-card {
+  margin: 0;
   flex: 0 0 180px;
   background: #fff;
-  border-radius: 0;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.08);
 }
 
 .gallery-card img {

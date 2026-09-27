@@ -283,12 +283,7 @@ function renderGallery(container, items, unit = 'countries') {
   const cards = items.map(c => {
     const thumb = galleryThumb(c, unit);
     const fallback = `https://picsum.photos/seed/${encodeURIComponent(c.name)}/360/270`;
-    return `
-    <figure class="gallery-card">
-      <img src="${thumb}" alt="${escapeHtml(c.name)}" loading="lazy" width="180" height="120" data-fallback="${escapeHtml(fallback)}" onerror="if(this.dataset.fallback){this.onerror=null;this.src=this.dataset.fallback}">
-      <span>${escapeHtml(c.name)}</span>
-    </figure>
-  `;
+    return `<div class="gallery-card"><img src="${thumb}" alt="${escapeHtml(c.name)}" loading="lazy" width="180" height="120" data-fallback="${escapeHtml(fallback)}" onerror="if(this.dataset.fallback){this.onerror=null;this.src=this.dataset.fallback}"><span>${escapeHtml(c.name)}</span></div>`;
   }).join('');
   container.innerHTML = `<div class="gallery-track">${cards}${cards}</div>`;
 }
