@@ -29,21 +29,29 @@ async function initStatesMap(root) {
   if (root.dataset.statesReady === '1') return;
   root.dataset.statesReady = '1';
 
-  const res = await fetch('/travel/states.json');
-  const data = await res.json();
-  const visited = new Set(data.visitedFips);
-  const visitedStates = data.states.filter(s => visited.has(s.fips));
+  const intro = root.querySelector('[data-travel-view=\"states\"] .travel-intro');
+  try {
+    const res = await fetch('/travel/states.json');
+    if (!res.ok) throw new Error(`states.json ${res.status}`);
+    const data = await res.json();
+    const visited = new Set(data.visitedFips);
+    const visitedStates = data.states.filter(s => visited.has(s.fips));
 
-  root._statesCleanup = await renderUsMap(root.querySelector('[data-us-map]'), visited);
-  renderGallery(root.querySelector('[data-states-gallery]'), visitedStates);
-  const statesView = root.querySelector('[data-travel-view=\"states\"]');
-  if (statesView && data.remaining) statesView.dataset.remaining = data.remaining;
-  renderContinents(
-    root.querySelector('[data-states-regions]'),
-    data.byRegion,
-    data.count,
-    'states',
-  );
+    renderGallery(root.querySelector('[data-states-gallery]'), visitedStates);
+    const statesView = root.querySelector('[data-travel-view=\"states\"]');
+    if (statesView && data.remaining) statesView.dataset.remaining = data.remaining;
+    renderContinents(
+      root.querySelector('[data-states-regions]'),
+      data.byRegion,
+      data.count,
+      'states',
+    );
+
+    root._statesCleanup = await renderUsMap(root.querySelector('[data-us-map]'), visited);
+  } catch (err) {
+    console.error('initStatesMap failed', err);
+    if (intro) intro.textContent = 'Could not load state stats — try a refresh.';
+  }
 }
 
 async function renderGlobe(container, visited) {
