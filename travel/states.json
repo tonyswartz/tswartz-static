@@ -1,6 +1,6 @@
 {
-  "source": "tripit (Tony 2026-09-27 screenshots)",
-  "count": 27,
+  "source": "tripit auto-sync (2026-09-27)",
+  "count": 29,
   "visitedFips": [
     "02",
     "04",
@@ -15,6 +15,7 @@
     "21",
     "22",
     "23",
+    "24",
     "25",
     "30",
     "32",
@@ -23,6 +24,7 @@
     "36",
     "41",
     "42",
+    "45",
     "47",
     "48",
     "49",
@@ -390,19 +392,9 @@
     }
   ],
   "byRegion": {
-    "West": [
-      "Alaska",
-      "Arizona",
-      "California",
-      "Colorado",
-      "Hawaii",
-      "Idaho",
-      "Montana",
-      "Nevada",
-      "Oregon",
-      "Utah",
-      "Washington",
-      "Wyoming"
+    "Midwest": [
+      "Illinois",
+      "Wisconsin"
     ],
     "Northeast": [
       "Connecticut",
@@ -418,12 +410,24 @@
       "Georgia",
       "Kentucky",
       "Louisiana",
+      "Maryland",
+      "South Carolina",
       "Tennessee",
       "Texas"
     ],
-    "Midwest": [
-      "Illinois",
-      "Wisconsin"
+    "West": [
+      "Alaska",
+      "Arizona",
+      "California",
+      "Colorado",
+      "Hawaii",
+      "Idaho",
+      "Montana",
+      "Nevada",
+      "Oregon",
+      "Utah",
+      "Washington",
+      "Wyoming"
     ]
   },
   "thumbSource": "Wikimedia Commons (CC/public domain landscape photos)"
