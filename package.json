@@ -1,0 +1,12 @@
+{
+  "name": "tswartz-static",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node serve.js",
+    "serve": "node serve.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
