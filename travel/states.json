@@ -295,14 +295,14 @@
       "abbr": "OR",
       "fips": "41",
       "region": "West",
-      "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Crater_Lake_winter_pano2.jpg/360px-Crater_Lake_winter_pano2.jpg"
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Crater_Lake_winter_pano2.jpg/500px-Crater_Lake_winter_pano2.jpg"
     },
     {
       "name": "Pennsylvania",
       "abbr": "PA",
       "fips": "42",
       "region": "Northeast",
-      "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Philadelphia_from_South_Street.jpg/360px-Philadelphia_from_South_Street.jpg"
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Philadelphia_from_South_Street.jpg/500px-Philadelphia_from_South_Street.jpg"
     },
     {
       "name": "Rhode Island",
@@ -386,7 +386,7 @@
       "abbr": "WY",
       "fips": "56",
       "region": "West",
-      "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Adams_The_Tetons_and_the_Snake_River.jpg/360px-Adams_The_Tetons_and_the_Snake_River.jpg"
+      "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Adams_The_Tetons_and_the_Snake_River.jpg/500px-Adams_The_Tetons_and_the_Snake_River.jpg"
     }
   ],
   "byRegion": {

@@ -254,7 +254,7 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .us-map-wrap svg {
@@ -265,10 +265,10 @@
 
 .gallery-track-wrap {
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.35);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
 }
 
 .gallery-track {
@@ -304,6 +304,26 @@
   font-size: 0.8125rem;
   font-weight: 700;
   line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+  .gallery-track-wrap {
+    mask-image: none;
+    border-radius: 10px;
+  }
+
+  .gallery-card {
+    flex-basis: 132px;
+  }
+
+  .gallery-card img {
+    height: 88px;
+  }
+
+  .gallery-card span {
+    padding: 2px 5px 4px;
+    font-size: 0.75rem;
+  }
 }
 
 .continent-grid {
