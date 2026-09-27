@@ -273,9 +273,9 @@
 
 .gallery-track {
   display: flex;
-  gap: 4px;
+  gap: 2px;
   width: max-content;
-  padding: 4px;
+  padding: 2px;
   animation: gallery-scroll 120s linear infinite;
 }
 
@@ -300,10 +300,10 @@
 
 .gallery-card span {
   display: block;
-  padding: 8px 10px 10px;
-  font-size: 0.875rem;
+  padding: 3px 6px 5px;
+  font-size: 0.8125rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .continent-grid {

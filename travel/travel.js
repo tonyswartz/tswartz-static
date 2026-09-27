@@ -122,15 +122,21 @@ async function renderGlobe(container, visited) {
     .append('title')
     .text(d => d.properties?.name || '');
 
+  const baseLon = 100;
+  const baseLat = 45;
   let rotation = 0;
   let frame = null;
+  const applyRotation = () => {
+    projection.rotate([baseLon - rotation, -baseLat, 0]);
+    svg.selectAll('path.region, path.sphere').attr('d', path);
+  };
   const spin = () => {
     rotation = (rotation + 0.18) % 360;
-    projection.rotate([-rotation, -12, 0]);
-    svg.selectAll('path.region, path.sphere').attr('d', path);
+    applyRotation();
     frame = requestAnimationFrame(spin);
   };
 
+  applyRotation();
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     spin();
   }
@@ -261,10 +267,11 @@ async function renderUsMap(container, visited) {
 }
 
 function galleryThumb(item, unit) {
+  if (item.thumb) return item.thumb;
   if (unit === 'states') {
     return `https://picsum.photos/seed/us-${item.abbr.toLowerCase()}/360/270`;
   }
-  return item.thumb;
+  return '';
 }
 
 function renderGallery(container, items, unit = 'countries') {
