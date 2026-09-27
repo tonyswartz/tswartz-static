@@ -266,14 +266,11 @@
 .gallery-track-wrap {
   overflow: hidden;
   margin-bottom: 16px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.35);
-  mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
 }
 
 .gallery-track {
   display: flex;
-  gap: 4px;
+  gap: 8px;
   width: max-content;
   padding: 0;
   animation: gallery-scroll 120s linear infinite;
@@ -287,9 +284,8 @@
   margin: 0;
   flex: 0 0 180px;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.08);
 }
 
 .gallery-card img {
@@ -308,11 +304,6 @@
 }
 
 @media (max-width: 640px) {
-  .gallery-track-wrap {
-    mask-image: none;
-    border-radius: 10px;
-  }
-
   .gallery-card {
     flex-basis: 132px;
   }
