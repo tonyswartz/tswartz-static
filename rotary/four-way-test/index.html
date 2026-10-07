@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Four-Way Test — Rotary</title>
+  <meta name="description" content="The Four-Way Test of the things we think, say or do">
+  <meta name="theme-color" content="#17458F">
+  <style>
+    html, body { height: 100%; margin: 0; background: #17458F; }
+    .stage { position: fixed; inset: 0; background: #17458F; }
+    .stage picture { display: contents; }
+    .stage img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .hint {
+      position: fixed; left: 0; right: 0; bottom: 20px; margin: 0;
+      font: 500 14px/1 system-ui, sans-serif; text-align: center;
+      color: rgba(255, 255, 255, 0.8); pointer-events: none;
+      opacity: 0; transition: opacity 0.6s;
+    }
+    .hint.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <picture>
+      <source media="(orientation: portrait)" srcset="/rotary/four-way-test-portrait.png">
+      <img src="/rotary/four-way-test.png" alt="The Four-Way Test of the things we think, say or do. 1. Is it the truth? 2. Is it fair to all concerned? 3. Will it build goodwill and better friendships? 4. Will it be beneficial to all concerned?">
+    </picture>
+  </div>
+  <p class="hint" id="hint">Click for full screen</p>
+  <script>
+    // The page already fills the window. Where the browser allows it, a click
+    // goes true full screen and Esc (or another click) comes back.
+    (function () {
+      var stage = document.getElementById('stage');
+      var hint = document.getElementById('hint');
+      var request = stage.requestFullscreen || stage.webkitRequestFullscreen;
+      if (!request) return; // no Fullscreen API (iPhone)
+
+      var isFull = function () {
+        return document.fullscreenElement || document.webkitFullscreenElement;
+      };
+
+      stage.style.cursor = 'pointer';
+      hint.classList.add('show');
+      setTimeout(function () { hint.classList.remove('show'); }, 4000);
+
+      stage.addEventListener('click', function () {
+        hint.classList.remove('show');
+        if (isFull()) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        else request.call(stage);
+      });
+    })();
+  </script>
+</body>
+</html>
