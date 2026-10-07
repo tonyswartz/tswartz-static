@@ -1,15 +1,17 @@
-// Background music for the Rotary pages: a hidden YouTube player behind one
-// play/pause button at the bottom of the screen. Nothing plays until the
+// Background music for the Four-Way Test: a hidden YouTube player behind one
+// play/pause button at the bottom of the graphic. Nothing plays until the
 // button is pressed, and every page load starts at a random song.
 (function () {
-  var VIDEO = 'Sz_M4ZBF8kg'; // "cozy acoustic covers", alexrainbirdMusic
-  // Where each song starts, in seconds (the video's chapters).
+  var VIDEO = 'e_DTfMJOPbc'; // "50 Greatest Hits Vol.2", Massimo Roberti: solo acoustic guitar, no singing
+  // Where the faster songs start, in seconds (from the video's chapters). The
+  // slow ones still play in their turn; the music just never opens on one.
   var SONGS = [
-    0, 141, 352, 517, 701, 872, 992, 1141, 1309, 1482, 1725,
-    1988, 2246, 2447, 2641, 2799, 2981, 3196, 3406, 3646, 3825, 4064,
-    4196, 4411, 4638, 4884, 5036, 5217, 5372, 5555, 5800, 5982, 6222,
-    6395, 6640, 6810, 7028, 7231, 7459, 7687, 7911, 8167, 8407, 8605
+    1573, 2018, 2198, 2430, 2991, 3830, 4020, 4340, 5028, 5203, 5456, 5597,
+    5966, 6340, 6814, 6975, 7120, 7353, 7791, 7941, 8806, 9054, 9402, 10141
   ];
+  // /rotary is a list of links, so there the music belongs to the full-screen
+  // graphic alone: the player loads when it opens and stops when it closes.
+  var fullScreenOnly = document.currentScript.hasAttribute('data-full-screen-only');
   var PLAY = 'M8 5v14l11-7z';
   var PAUSE = 'M6 5h4v14H6zm8 0h4v14h-4z';
 
@@ -47,12 +49,24 @@
 
   var player;
   var ready = false;
+  var api;
+  var load = function () {
+    if (api) return;
+    api = document.createElement('script');
+    api.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(api);
+  };
 
   // Full screen shows only the graphic, so the button moves into it and back.
   var place = function () {
+    var full = document.fullscreenElement || document.webkitFullscreenElement;
+    if (full) load();
     if (!ready) return;
-    var host = document.fullscreenElement || document.webkitFullscreenElement || document.body;
-    if (button.parentNode !== host) host.appendChild(button);
+    var host = full || (fullScreenOnly ? null : document.body);
+    if (!host) {
+      player.pauseVideo();
+      button.remove();
+    } else if (button.parentNode !== host) host.appendChild(button);
   };
   document.addEventListener('fullscreenchange', place);
   document.addEventListener('webkitfullscreenchange', place);
@@ -77,9 +91,9 @@
           place();
         },
         onStateChange: function (event) {
-          // At the end of the video, carry on from the first song.
+          // At the end of the video, carry on from the first of those songs.
           if (event.data === YT.PlayerState.ENDED) {
-            player.seekTo(0, true);
+            player.seekTo(SONGS[0], true);
             player.playVideo();
             return;
           }
@@ -92,7 +106,5 @@
       }
     });
   };
-  var api = document.createElement('script');
-  api.src = 'https://www.youtube.com/iframe_api';
-  document.head.appendChild(api);
+  if (!fullScreenOnly) load();
 })();
