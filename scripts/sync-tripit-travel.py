@@ -16,8 +16,8 @@ COUNTRIES_JSON = TRAVEL / "countries.json"
 ALPHA2_JSON = TRAVEL / "alpha2-iso-num.json"
 STATE_FILE = Path.home() / ".buzz" / "tripit-travel-sync-state.json"
 EXCLUDE_FILE = Path.home() / ".buzz" / "tripit-travel-exclude.json"
-DM_CHANNEL = "c7990b4b-157c-450e-a3f5-e162105316b2"
-TONY_HEX = "272d0c3ae273a2ccb96cad3bd88a08a1b14a491d9cde0c6a02f5063a54f100de"
+DM_CHANNEL = "e891e7dc-d537-43d3-b5a2-b3919de4d957"
+TONY_HEX = "ffdc3dbcb4e105bca4f063840db5f1cc29c5e43ff3bcfa1b223adbbc3c34d8bb"
 RESERVATION_OBJECT_TYPES = (
     "LodgingObject",
     "CarObject",
