@@ -30,7 +30,22 @@ const REDIRECTS = {
 };
 
 const server = http.createServer((req, res) => {
-  let url = decodeURIComponent(req.url.split('?')[0]);
+  // Scanners send paths with malformed %-sequences and null bytes. Either one
+  // threw inside this handler and crashed the process; after ten restarts
+  // Railway stopped trying and the site was down (2026-10-24).
+  let url;
+  try {
+    url = decodeURIComponent(req.url.split('?')[0]);
+  } catch {
+    res.writeHead(400);
+    res.end('Bad Request');
+    return;
+  }
+  if (/[\0-\x1f\x7f]/.test(url)) {
+    res.writeHead(400);
+    res.end('Bad Request');
+    return;
+  }
 
   if (REDIRECTS[url]) {
     res.writeHead(301, { Location: REDIRECTS[url] });
