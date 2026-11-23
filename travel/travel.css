@@ -321,16 +321,15 @@ body.travel-page main.page.blog-page {
   stroke-width: 0.6px;
 }
 
-.globe-wrap .lincoln-marker {
-  pointer-events: none;
-  user-select: none;
-}
-
-.travel-legend {
-  margin: 8px 0 0;
+.travel-lincoln-legend {
+  margin: 20px 0 0;
+  padding: 14px 16px;
   text-align: center;
   font-size: 0.95rem;
-  opacity: 0.85;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 14px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .us-map-wrap {
@@ -555,9 +554,10 @@ body.travel-page main.page.blog-page {
     font-size: 0.85rem;
   }
 
-  .travel-legend {
+  .travel-lincoln-legend {
     font-size: 0.875rem;
-    margin-bottom: 8px;
+    margin-top: 16px;
+    padding: 12px;
   }
 
   .gallery-track-wrap {
