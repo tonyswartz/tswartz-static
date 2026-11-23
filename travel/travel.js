@@ -1,6 +1,10 @@
 const WORLD_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 const US_URL = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
 
+function padIsoNum(id) {
+  return String(id).padStart(3, '0');
+}
+
 export async function initTravelMap(root, mode = 'world') {
   if (!root) return;
   if (mode === 'world') return initWorldMap(root);
@@ -16,7 +20,9 @@ async function initWorldMap(root) {
     const res = await fetch('/travel/countries.json');
     if (!res.ok) throw new Error(`countries.json ${res.status}`);
     const data = await res.json();
-    const visited = new Set(data.visitedIsoNums);
+    const visited = new Set(data.visitedIsoNums.map(padIsoNum));
+    const lincoln = new Set((data.lincolnVisitedIsoNums || []).map(padIsoNum));
+    const lincolnMarker = data.lincolnMarker || '👶';
 
     renderGallery(root.querySelector('[data-gallery]'), data.countries, 'countries');
     renderContinents(
@@ -26,7 +32,21 @@ async function initWorldMap(root) {
       'countries',
     );
 
-    root._worldCleanup = await renderGlobe(root.querySelector('[data-globe]'), visited);
+    root._worldCleanup = await renderGlobe(
+      root.querySelector('[data-globe]'),
+      visited,
+      lincoln,
+      lincolnMarker,
+    );
+
+    const worldView = root.querySelector('[data-travel-view="world"]');
+    worldView?.querySelector('.travel-legend')?.remove();
+    if (lincoln.size) {
+      const legend = document.createElement('p');
+      legend.className = 'travel-legend';
+      legend.textContent = `${lincolnMarker} countries Lincoln has visited`;
+      worldView?.querySelector('.globe-wrap')?.insertAdjacentElement('afterend', legend);
+    }
   } catch (err) {
     console.error('initWorldMap failed', err);
     if (intro) intro.textContent = 'Could not load travel stats — try a refresh.';
@@ -72,10 +92,10 @@ async function initStatesMap(root) {
   }
 }
 
-async function renderGlobe(container, visited) {
+async function renderGlobe(container, visited, lincoln = new Set(), lincolnMarker = '👶') {
   if (!container) return () => {};
 
-  const [{ geoOrthographic, geoPath, select }, topojson, world] = await Promise.all([
+  const [{ geoOrthographic, geoPath, geoCentroid, select }, topojson, world] = await Promise.all([
     import('https://cdn.jsdelivr.net/npm/d3@7/+esm'),
     import('https://cdn.jsdelivr.net/npm/topojson-client@3/+esm'),
     fetch(WORLD_URL).then(r => r.json()),
@@ -117,10 +137,37 @@ async function renderGlobe(container, visited) {
     .selectAll('path')
     .data(countries)
     .join('path')
-    .attr('class', d => visited.has(d.id) ? 'region visited' : 'region unvisited')
+    .attr('class', d => (visited.has(padIsoNum(d.id)) ? 'region visited' : 'region unvisited'))
     .attr('d', path)
     .append('title')
-    .text(d => d.properties?.name || '');
+    .text(d => {
+      const name = d.properties?.name || '';
+      return lincoln.has(padIsoNum(d.id)) && visited.has(padIsoNum(d.id))
+        ? `${name} (Lincoln too)`
+        : name;
+    });
+
+  const markerFeatures = countries.filter(
+    d => visited.has(padIsoNum(d.id)) && lincoln.has(padIsoNum(d.id)),
+  );
+  const markers = svg.append('g').attr('class', 'lincoln-markers');
+  const markerSel = markers
+    .selectAll('text')
+    .data(markerFeatures)
+    .join('text')
+    .attr('class', 'lincoln-marker')
+    .attr('text-anchor', 'middle')
+    .attr('dominant-baseline', 'central')
+    .attr('font-size', 14)
+    .text(lincolnMarker);
+
+  const placeMarkers = () => {
+    markerSel.attr('transform', d => {
+      const p = projection(geoCentroid(d));
+      if (!p) return 'translate(-9999,-9999)';
+      return `translate(${p[0]},${p[1]})`;
+    });
+  };
 
   const baseLon = 100;
   const baseLat = 45;
@@ -129,6 +176,7 @@ async function renderGlobe(container, visited) {
   const applyRotation = () => {
     projection.rotate([baseLon - rotation, -baseLat, 0]);
     svg.selectAll('path.region, path.sphere').attr('d', path);
+    placeMarkers();
   };
   const spin = () => {
     rotation = (rotation + 0.18) % 360;
@@ -137,6 +185,7 @@ async function renderGlobe(container, visited) {
   };
 
   applyRotation();
+  placeMarkers();
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     spin();
   }

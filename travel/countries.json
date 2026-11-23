@@ -1,6 +1,12 @@
 {
   "source": "matadornetwork.com/travel-map/d36b399390aba663c0e6878d8c8127b1-1682094137",
   "count": 40,
+  "lincolnMarker": "👶",
+  "lincolnVisitedIsoNums": [
+    "044",
+    "620",
+    "840"
+  ],
   "visitedIsoNums": [
     "010",
     "028",

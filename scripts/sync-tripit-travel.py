@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 import sys
 from datetime import date, datetime, timezone
@@ -28,6 +29,7 @@ RESERVATION_OBJECT_TYPES = (
     "FerryObject",
 )
 ADDRESS_KEYS = ("Address", "StartAddress", "EndAddress", "PickupAddress", "DropoffAddress")
+CHILD_GUEST_RE = re.compile(r"\b(child|children|kid|toddler|infant|2yo)\b", re.I)
 
 
 def run_tripit(args: list[str]) -> dict:
@@ -85,6 +87,61 @@ def fetch_completed_trips() -> list[dict]:
         seen.add(uid)
         unique.append(trip)
     return unique
+
+
+def fetch_started_trips() -> list[dict]:
+    """Completed plus in-progress trips (start on or before today)."""
+    today = date.today()
+    trips: list[dict] = []
+    seen: set[str] = set()
+    for past in (False, True):
+        page = 1
+        while True:
+            data = run_tripit(
+                [
+                    "trips",
+                    "list",
+                    "-o",
+                    "json",
+                    "--page-num",
+                    str(page),
+                    "--page-size",
+                    "100",
+                ]
+                + (["--past"] if past else [])
+            )
+            batch = data.get("Trip") or []
+            if isinstance(batch, dict):
+                batch = [batch]
+            if not batch:
+                break
+            for trip in batch:
+                uuid = trip.get("uuid")
+                if not uuid or uuid in seen:
+                    continue
+                start_raw = trip.get("start_date")
+                if not start_raw:
+                    continue
+                if date.fromisoformat(start_raw) > today:
+                    continue
+                seen.add(uuid)
+                trips.append(trip)
+            if len(batch) < 100:
+                break
+            page += 1
+    return trips
+
+
+def reservation_has_child(obj: dict) -> bool:
+    guests = obj.get("number_guests") or ""
+    if CHILD_GUEST_RE.search(guests):
+        return True
+    notes = obj.get("notes") or ""
+    return bool(CHILD_GUEST_RE.search(notes))
+
+
+def trip_has_child_traveler(trip_detail: dict) -> bool:
+    return any(reservation_has_child(obj) for obj in iter_reservation_objects(trip_detail))
 
 
 def load_json(path: Path) -> dict:
@@ -266,9 +323,11 @@ def main() -> int:
 
     before_state_fips = set(states_data.get("visitedFips", []))
     before_country_iso = set(countries_data.get("visitedIsoNums", []))
+    before_lincoln_iso = set(countries_data.get("lincolnVisitedIsoNums", []))
 
     excluded = load_excluded_trip_uuids()
     trips = fetch_completed_trips()
+    started_trips = fetch_started_trips()
     print(f"Completed trips scanned: {len(trips)} (excluding {len(excluded)} blocked)")
 
     trip_fips: set[str] = set()
@@ -289,13 +348,29 @@ def main() -> int:
         trip_fips |= fips
         trip_iso |= iso_nums
 
+    lincoln_trip_iso: set[str] = set()
+    for trip in started_trips:
+        uuid = trip.get("uuid")
+        if not uuid or uuid in excluded:
+            continue
+        detail = fetch_trip_detail(uuid)
+        if not trip_has_child_traveler(detail):
+            continue
+        _, iso_nums = extract_from_trip_detail(detail, abbr_fips, alpha2_to_isonum)
+        lincoln_trip_iso |= iso_nums
+
     new_state_fips = before_state_fips | trip_fips
     new_country_iso = before_country_iso | trip_iso
     added_state_fips = new_state_fips - before_state_fips
     added_country_iso = new_country_iso - before_country_iso
+    # Auto-add Lincoln only for countries already on the map; new countries need Tony's OK.
+    auto_lincoln_iso = lincoln_trip_iso - added_country_iso
+    new_lincoln_iso = before_lincoln_iso | auto_lincoln_iso
+    lincoln_changed = new_lincoln_iso != before_lincoln_iso
+    pending_lincoln_ask = sorted(added_country_iso)
 
     states_changed = added_state_fips != set()
-    countries_changed = added_country_iso != set()
+    countries_changed = added_country_iso != set() or lincoln_changed
 
     if states_changed:
         states_data["visitedFips"] = sorted(new_state_fips)
@@ -315,6 +390,9 @@ def main() -> int:
         countries_data["byContinent"] = rebuild_by_continent(
             countries_data["countries"], set(new_country_iso)
         )
+        if lincoln_changed:
+            countries_data["lincolnVisitedIsoNums"] = sorted(new_lincoln_iso)
+            countries_data.setdefault("lincolnMarker", "👶")
         countries_data["source"] = f"tripit auto-sync ({date.today().isoformat()})"
         write_json(COUNTRIES_JSON, countries_data)
 
@@ -328,6 +406,11 @@ def main() -> int:
         "visited_countries": len(new_country_iso),
         "added_states": names_for_fips(states_data["states"], added_state_fips),
         "added_countries": names_for_iso(countries_data["countries"], added_country_iso),
+        "lincoln_countries": len(new_lincoln_iso),
+        "added_lincoln_countries": names_for_iso(
+            countries_data["countries"], new_lincoln_iso - before_lincoln_iso
+        ),
+        "pending_lincoln_ask_iso": pending_lincoln_ask,
         "added_state_sources": {
             fips_to_name[f]: sorted(set(state_sources.get(f, [])))
             for f in sorted(added_state_fips)
@@ -342,7 +425,7 @@ def main() -> int:
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     write_json(STATE_FILE, snapshot)
 
-    if not states_changed and not countries_changed:
+    if not states_changed and not countries_changed and not lincoln_changed:
         print("Already up to date.")
         return 0
 
@@ -369,6 +452,10 @@ def main() -> int:
             trips = snapshot.get("added_country_sources", {}).get(country_name, [])
             if trips:
                 lines.append(f"- {country_name} ← {', '.join(trips)}")
+        lines.append(
+            "**Lincoln?** For each new country above — did he come? "
+            "Reply which should get 👶 on the map (TripIt child flag is not enough by itself)."
+        )
     lines.append("Live after Railway deploy: https://tswartz-production.up.railway.app/travel/")
     notify_tony("\n".join(lines))
     print(summary)
